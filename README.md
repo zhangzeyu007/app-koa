@@ -1,4 +1,4 @@
-# y
+# Vue + koa + mongoodb + 有赞vant 移动商城项目
 
 > A Vue.js project
 
