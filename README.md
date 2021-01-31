@@ -1,4 +1,4 @@
-# Vue2.0 + koa2 + mongoodb + 有赞vant 移动商城项目
+# Vue2.0 + koa2 + mongoodb + 有赞vant 移动商城系统
 
 > A Vue.js project
 
