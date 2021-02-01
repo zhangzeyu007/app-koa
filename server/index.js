@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-22 21:07:12
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-31 11:12:17
+ * @LastEditTime: 2021-02-01 12:59:25
  */
 
 const Koa = require('koa')
@@ -13,6 +13,10 @@ const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const cors = require('koa2-cors')
 const session = require('koa-session');
+const KoaStatic = require('koa-static');
+
+app.use(KoaStatic('./'));
+
 require('koa2-ctx-validator')(app);
 
 
