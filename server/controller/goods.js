@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-25 22:24:02
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-31 18:39:35
+ * @LastEditTime: 2021-02-12 18:25:31
  */
 const Koa = require('koa')
 const app = new Koa()
@@ -19,10 +19,11 @@ router.get('/insetAllGoodsInfo', async (ctx) => {
     fs.readFile('./data_json/newGoods.json', 'utf8', (err, data) => {
         // console.log(data);
         data = JSON.parse(data)
+        // console.log(data);
         let saveCount = 0
         const Goods = mongoose.model('goods')
-        data.map((value, index) => {
-            let newGoods = new Goods(value)
+        data.map((item, index) => {
+            let newGoods = new Goods(item)
             newGoods.save().then(() => {
                 saveCount++
                 console.log("成功" + saveCount);

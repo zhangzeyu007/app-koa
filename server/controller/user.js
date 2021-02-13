@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-24 15:13:57
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-31 19:36:34
+ * @LastEditTime: 2021-02-12 17:53:13
  */
 const Router = require('koa-router')
 const mongoose = require('mongoose')
@@ -103,7 +103,7 @@ router.post('/login', async (ctx) => {
                     if (isMatch) {
                         const token = jwt.sign({
                             email
-                        }, config.jwt.secret, { expiresIn: '20m' })
+                        }, config.jwt.secret, { expiresIn: '1h' })
                         ctx.body = {
                             code: 200,
                             message: "请求成功",

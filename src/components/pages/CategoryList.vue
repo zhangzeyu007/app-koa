@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-27 17:23:22
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-31 13:06:12
+ * @LastEditTime: 2021-02-12 17:55:41
 -->
 <template>
   <div class="">
@@ -131,6 +131,7 @@ export default {
       this.$api.goods
         .getCategoryData({})
         .then((result) => {
+          console.log(result);
           if (result.code == 200 && result.data) {
             this.categoryList = result.data;
             this.getCategorySubList(this.categoryList[0].ID);
