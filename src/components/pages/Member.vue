@@ -3,30 +3,13 @@
  * @Author: 海象
  * @Date: 2021-01-29 11:54:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-30 21:09:49
+ * @LastEditTime: 2021-03-11 13:05:38
 -->
 
 <template>
   <div class="member">
-    <!-- 会员头像 -->
-    <div class="author">
-      <div class="author-img">
-        <img
-          class="user-icon"
-          src="../../../static/image/member/ahtor_icon.jpg"
-          alt=""
-        />
-      </div>
-      <div class="author-msg">
-        <img
-          class="msg"
-          src="../../../static/image/member/msg-icon.png"
-          alt=""
-        />
-      </div>
-    </div>
     <!-- 会员卡  -->
-    <div class="member-card">
+    <!-- <div class="member-card">
       <div class="card-left">
         <div class="king-icon">
           <img
@@ -38,9 +21,9 @@
         <div class="king-text">它鲜会员</div>
       </div>
       <div class="card-right">专享受9大权益</div>
-    </div>
+    </div> -->
     <!--我的钱包  -->
-    <div class="manage">
+    <!-- <div class="manage">
       <div class="manage-item line-right">
         <img
           class="poket-icon"
@@ -57,51 +40,56 @@
         <div class="balance">0.36</div>
         <div class="manage-item-text">余额</div>
       </div>
-    </div>
+    </div> -->
+    <!-- 文章列表渲染 -->
+    <virtual-list
+      v-if="editorList.length > 0"
+      :listData="editorList"
+    ></virtual-list>
   </div>
 </template>
 
 <script>
+import VirtualList from "../common/component/VirtualList.vue";
+
 export default {
   data() {
-    return {};
+    return {
+      editorList: [],
+    };
   },
-  methods: {},
+  components: {
+    VirtualList,
+  },
+  activated() {
+    this.getEditorList();
+  },
+  methods: {
+    async getEditorList() {
+      this.$api.editor
+        .getEditorDataList()
+        .then((res) => {
+          console.log(res);
+          if (res.code === 200) {
+            this.editorList = res.data;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
 };
 </script>
 
-<style  scoped>
-.author {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  margin-top: 10px;
-}
-.author-img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px 25px 5px 25px;
-  box-sizing: border-box;
-}
-.user-icon {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.msg {
-  width: 20px;
-  margin-right: 25px;
-}
+<style  lang="less" scoped>
 .member-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px 15px 10px 15px;
-  padding: 10px 5px 10px 5px;
-  border-radius: 20px;
+  padding: 5px;
+  border-radius: 5px;
   -webkit-background-image: linear-gradient(to right, #f7e491, #fcf0da);
   background-image: linear-gradient(to right, #f7e491, #fcf0da);
   box-sizing: border-box;
@@ -121,7 +109,7 @@ export default {
   padding-right: 10px;
 }
 .king-img {
-  width: 25px;
+  width: 20px;
 }
 .manage {
   display: flex;

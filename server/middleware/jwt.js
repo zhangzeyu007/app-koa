@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-31 08:53:17
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-31 12:11:39
+ * @LastEditTime: 2021-03-09 22:28:53
  */
 
 const jwt = require('jsonwebtoken')
@@ -21,7 +21,6 @@ module.exports = ({ app }) => {
         const token = ctx.request.header.authorization.replace('Bearer ', '')
         try {
             const ret = await jwt.verify(token, config.jwt.secret)
-            console.log(ret);
             ctx.state.email = ret.email
             await next()
         } catch (error) {

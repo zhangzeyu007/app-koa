@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-22 21:07:12
  * @LastEditors: 海象
- * @LastEditTime: 2021-02-12 18:05:18
+ * @LastEditTime: 2021-03-10 16:07:57
  */
 
 const Koa = require('koa')
@@ -44,6 +44,7 @@ app.use(cors({
 let user = require('./controller/user.js')
 let home = require('./controller/home.js')
 let goods = require('./controller/goods.js')
+let editor = require('./controller/editor.js')
 
 //装载所有子路由
 let router = new Router()
@@ -51,6 +52,7 @@ let router = new Router()
 router.use('/user', user.routes())
 router.use('/home', home.routes())
 router.use('/goods', goods.routes())
+router.use('/editor', editor.routes())
 
     ; (async () => {
         await connect()

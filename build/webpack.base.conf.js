@@ -1,10 +1,17 @@
+/*
+ * @Description: 组件
+ * @Author: 海象
+ * @Date: 2021-01-18 18:06:49
+ * @LastEditors: 海象
+ * @LastEditTime: 2021-03-10 11:08:02
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -40,6 +47,16 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "less-loader"
+        }]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
