@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-11 12:27:18
+ * @LastEditTime: 2021-03-11 14:51:46
 -->
 <template>
   <div
@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      screenHeight: 800,
+      screenHeight: 600,
       startOffset: 0,
       start: 0, // 开始索引
       end: 4, // 结束的索引
@@ -79,8 +79,8 @@ export default {
     },
   },
   activated() {
-    //  location.reload() 
-    this.startOffset = 0
+    //  location.reload()
+    this.startOffset = 0;
   },
   mounted() {
     this.screenHeight = window.innerHeight - 50;

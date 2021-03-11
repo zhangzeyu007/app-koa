@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 10:34:39
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-11 13:08:21
+ * @LastEditTime: 2021-03-11 14:19:01
 -->
 <template>
   <div class="article-item">
@@ -62,7 +62,7 @@ export default {
     }
     .like-num {
       position: absolute;
-      bottom: 10px;
+      bottom: 8px;
       right: 10px;
       font-size: 12px;
       text-align: right;
