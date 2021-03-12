@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-11 14:51:46
+ * @LastEditTime: 2021-03-12 08:01:27
 -->
 <template>
   <div
@@ -56,9 +56,6 @@ export default {
     listHeight() {
       return this.listData.length * this.size;
     },
-    getTop() {
-      return `${this.startOffset}px`;
-    },
     //可显示的列表项数
     visibleCount() {
       return Math.ceil(this.screenHeight / this.size);
@@ -71,7 +68,6 @@ export default {
     //获取真实显示列表数据
     visibleData() {
       console.log(this.listData, this.start, this.end);
-
       return this.listData.slice(
         this.start,
         Math.min(this.end, this.listData.length)
@@ -79,7 +75,6 @@ export default {
     },
   },
   activated() {
-    //  location.reload()
     this.startOffset = 0;
   },
   mounted() {

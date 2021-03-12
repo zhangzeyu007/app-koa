@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 10:34:39
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-11 14:19:01
+ * @LastEditTime: 2021-03-12 08:02:01
 -->
 <template>
   <div class="article-item">
@@ -44,7 +44,6 @@ export default {
   padding: 10px 15px;
   box-sizing: border-box;
   border: 1px solid #eee;
-
   .top {
     flex-shrink: 0;
     padding: 5px 0;
