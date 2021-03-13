@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-12 08:01:27
+ * @LastEditTime: 2021-03-13 16:35:21
 -->
 <template>
   <div
@@ -78,6 +78,7 @@ export default {
     this.startOffset = 0;
   },
   mounted() {
+    // 获取可视屏幕的高度
     this.screenHeight = window.innerHeight - 50;
     this.start = 0;
     this.end = this.start + this.visibleCount;
