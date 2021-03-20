@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-13 16:35:21
+ * @LastEditTime: 2021-03-20 08:45:41
 -->
 <template>
   <div
@@ -67,7 +67,6 @@ export default {
     //
     //获取真实显示列表数据
     visibleData() {
-      console.log(this.listData, this.start, this.end);
       return this.listData.slice(
         this.start,
         Math.min(this.end, this.listData.length)
