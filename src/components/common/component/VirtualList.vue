@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-03-20 08:45:41
+ * @LastEditTime: 2021-04-03 08:57:02
 -->
 <template>
   <div
@@ -97,7 +97,7 @@ export default {
 };
 </script>
 
-<style lang="less"  scoped>
+<style lang="less" scoped>
 .list-container {
   overflow: auto;
   position: relative;
