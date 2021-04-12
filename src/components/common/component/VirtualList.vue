@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
  * @LastEditors: 海象
- * @LastEditTime: 2021-04-03 08:57:02
+ * @LastEditTime: 2021-04-07 11:07:28
 -->
 <template>
   <div
@@ -64,7 +64,6 @@ export default {
     getTransform() {
       return `translate3d(0,${this.startOffset}px,0)`;
     },
-    //
     //获取真实显示列表数据
     visibleData() {
       return this.listData.slice(

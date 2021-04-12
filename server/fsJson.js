@@ -3,11 +3,10 @@
  * @Author: 海象
  * @Date: 2021-01-25 21:30:56
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-25 21:59:53
+ * @LastEditTime: 2021-04-03 13:02:03
  */
 
 const fs = require('fs')
-
 
 fs.readFile('./json/goods.json', 'utf8', (err, data) => {
     let newData = JSON.parse(data)
