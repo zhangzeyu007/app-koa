@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-20 22:21:09
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-20 22:28:48
+ * @LastEditTime: 2021-04-12 10:43:43
 -->
 <template>
   <div class="">
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import VueAwesomeSwiper from "vue-awesome-swiper";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/swiper-bundle.css";
 
