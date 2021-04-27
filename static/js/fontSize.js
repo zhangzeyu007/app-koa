@@ -3,7 +3,7 @@
  * @Author: 海象
  * @Date: 2021-01-18 22:06:50
  * @LastEditors: 海象
- * @LastEditTime: 2021-01-19 07:37:01
+ * @LastEditTime: 2021-04-27 17:48:56
  */
 /**
  * 适配移动端
@@ -11,9 +11,15 @@
  * 在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值。
  * */
 // document.documentElement.style.fontSize = document.documentElement.clientWidth || document.body.clientWidth / 7.5 + 'px';
-document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth || document.body.clientWidth / 7.5 + 'px';
-
-window.addEventListener('resize', function () {
-    document.documentElement.style.fontSize =
-        document.documentElement.clientWidth || document.body.clientWidth / 7.5 + 'px'
-})
+(function (doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = (clientWidth / 7.5) + 'px';
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
