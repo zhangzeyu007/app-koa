@@ -27,7 +27,7 @@ switch (process.env.NODE_ENV) {
 
 /**
  * 设置超时时间和跨域是否允许携带凭证
- * 
+ *
 */
 axios.defaults.timeout = 10000;
 axios.defaults.withCredentials = true;
@@ -42,10 +42,11 @@ axios.defaults.transformRequest = data => qs.stringify(data)
 
 /**
  * 设置请求截器
- * 客户端发送请求 -> [请求拦截器] -> 服务器 
+ * 客户端发送请求 -> [请求拦截器] -> 服务器
  * TOKEN校验(JWT), 接收服务器返回的token,存储到vuex中
  * 每一次向服务器发请求, 我们应该把tken带上
 */
+
 axios.interceptors.request.use(config => {
     // 携带token
     let token = localStorage.getItem('token');

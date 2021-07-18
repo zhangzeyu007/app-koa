@@ -18,8 +18,9 @@
         type="danger"
         @click="clearCart"
         class="clear-cart"
-        >清空购物车</van-button
       >
+        清空购物车
+      </van-button>
     </div>
     <!-- 显示购物车的商品 -->
     <div class="cart-list">
@@ -47,6 +48,7 @@
 
 <script>
 import { toMoney } from "@/components/common/filter/currencyFilter.js";
+
 export default {
   data() {
     return {
@@ -54,9 +56,11 @@ export default {
       isEmpty: false,
     };
   },
+
   created() {
     this.getCartInfo();
   },
+
   computed: {
     totalmoney() {
       let allMoney = 0;
@@ -67,6 +71,7 @@ export default {
       return allMoney;
     },
   },
+
   filters: {
     moneyFilter(money) {
       return toMoney(money);
@@ -100,8 +105,7 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.clear-cart {
-}
+
 .total-money {
   padding-left: 10px;
   background-color: #fff;

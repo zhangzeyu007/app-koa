@@ -78,6 +78,7 @@
 <script>
 import { Toast } from "vant";
 import { toMoney } from "@/components/common/filter/currencyFilter.js";
+
 export default {
   data() {
     return {
@@ -94,14 +95,17 @@ export default {
       errorImg: 'this.src="' + require("@/assets/errorimg.png") + '"',
     };
   },
+
   filters: {
     moneyFilter(money) {
       return toMoney(money);
     },
   },
+
   created() {
     this.getCategoryList();
   },
+
   mounted() {
     let winHeight = document.documentElement.clientHeight;
     let navHeight = document.getElementById("nav-bar").clientHeight;
@@ -119,6 +123,7 @@ export default {
       this.page = 1;
       this.goodsList = [];
     },
+
     // 小类类别点击
     categroySubClick(index) {
       this.categorySubId = this.categorySubList[index].ID;
@@ -127,6 +132,7 @@ export default {
       this.page = 1;
       this.onLoad();
     },
+
     getCategoryList() {
       this.$api.goods
         .getCategoryData({})
@@ -189,6 +195,7 @@ export default {
         that.getSubGoodsList();
       }, 1000);
     },
+
     onRefresh() {
       setTimeout(() => {
         this.isRefresh = false;
@@ -198,6 +205,7 @@ export default {
         this.onLoad();
       }, 500);
     },
+
     goGoodsInfo(id) {
       this.$router.push({ name: "goodsDetail", params: { goodsId: id } });
     },
@@ -223,6 +231,10 @@ export default {
 #category-list {
   overflow: scroll;
 }
+
+#list-div {
+  overflow: scroll;
+}
 .list-item {
   display: flex;
   flex-direction: row;
@@ -231,9 +243,7 @@ export default {
   background-color: #fff;
   padding: 5px;
 }
-#list-div {
-  overflow: scroll;
-}
+
 .list-item-img {
   flex: 8;
 }

@@ -18,6 +18,7 @@ module.exports = ({ app }) => {
             }
             return
         }
+
         const token = ctx.request.header.authorization.replace('Bearer ', '')
         try {
             const ret = await jwt.verify(token, config.jwt.secret)

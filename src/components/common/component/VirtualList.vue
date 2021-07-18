@@ -48,9 +48,11 @@ export default {
       end: 4, // 结束的索引
     };
   },
+
   components: {
     ActicleItem,
   },
+
   computed: {
     //列表总高度
     listHeight() {
@@ -72,9 +74,11 @@ export default {
       );
     },
   },
+
   activated() {
     this.startOffset = 0;
   },
+
   mounted() {
     // 获取可视屏幕的高度
     this.screenHeight = window.innerHeight - 50;
@@ -102,6 +106,7 @@ export default {
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
+
 .list-phantom {
   position: absolute;
   left: 0;
@@ -109,12 +114,14 @@ export default {
   right: 0;
   z-index: -1;
 }
+
 .list {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
 }
+
 .article-item {
   margin-top: 10px;
 }
