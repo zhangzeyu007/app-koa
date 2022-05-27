@@ -158,7 +158,6 @@ export default {
     // form校验
     checkForm() {
       let isOk = true;
-
       return isOk;
     },
     goRegister() {

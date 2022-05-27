@@ -20,11 +20,13 @@ import { toMoney } from "../filter/currencyFilter";
 
 export default {
   props: ["goodsName", "goodsImage", "goodsPrice", "goodsId"],
+
   filters: {
     moneyFilter(money) {
       return toMoney(money);
     },
   },
+  
   methods: {
     goGoodsPage() {
       this.$router.push({

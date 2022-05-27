@@ -19,6 +19,7 @@ function Login(url, params) {
 function getCaptcha() {
     return axios.get('/user/captcha')
 }
+
 export default {
     setRegister,
     Login,

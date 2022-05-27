@@ -83,7 +83,6 @@ axios.interceptors.response.use(response => {
             case 404:// 资源文件不存在
                 break;
         }
-
     } else {
         //=> 服务器连接结果都没有返回
         if (!window.navigator.online) {

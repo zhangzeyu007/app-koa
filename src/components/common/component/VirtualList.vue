@@ -2,8 +2,8 @@
  * @Description: 组件
  * @Author: 海象
  * @Date: 2021-03-10 09:00:13
- * @LastEditors: 海象
- * @LastEditTime: 2021-04-07 11:07:28
+ * @LastEditors: 张泽雨
+ * @LastEditTime: 2022-04-26 13:25:17
 -->
 <template>
   <div
@@ -21,7 +21,8 @@
         :key="item._id"
         :article="item"
         :style="{ height: size + 'px' }"
-      ></acticle-item>
+      >
+      </acticle-item>
     </div>
   </div>
 </template>

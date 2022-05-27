@@ -42,8 +42,8 @@ export default {
   flex-direction: column;
   margin: 10px 15px;
   padding: 10px 15px;
-  box-sizing: border-box;
   border: 1px solid #eee;
+  box-sizing: border-box;
   .top {
     flex-shrink: 0;
     padding: 5px 0;
